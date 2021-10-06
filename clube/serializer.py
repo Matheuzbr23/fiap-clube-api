@@ -12,7 +12,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
         model = Usuario
         fields = '__all__'
     def validate_nome(self, nome):
-        if not nome.isalpha():
+        if not nome.replace(' ','').isalpha():
             raise serializers.ValidationError("Não é permitido a inclusão de números do nome do usuário.")
         return nome
     def validate_senha(self, senha):
