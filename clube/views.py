@@ -14,7 +14,6 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
     ordering_fields = ['nome', 'id']
     search_fields = ['nome', 'email']
-    filterset_fields = ['ativo']
 
 class ClubesViewSet(viewsets.ModelViewSet):
     """"Exibindo todos os clubes"""
