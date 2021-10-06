@@ -60,21 +60,3 @@ class ListaStoriesClube(generics.ListAPIView):
     serializer_class = ListaStoriesClubeSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
-
-# Back-end
-# 	Django Rest
-# 		ok--Login
-# 		ok--Desativar conta
-# 		ok--Criar clube
-# 		ok--	-> Categorias
-# 		ok--Entrar no clube
-# 		ok--Sair do clube
-# 		ok--Deletar clube
-# 		ok--Stories
-# 		ok--	Cadastrar, Excluir
-# 		ok--sqlite
-# 		Redis
-# 		Heroku
-# Pagina HTML
-# 	HTML
-# 	Bootstrap
