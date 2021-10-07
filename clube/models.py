@@ -31,7 +31,7 @@ class Storie(models.Model):
     clube = models.ForeignKey(Clube, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)    
     data = models.DateField()
-    texto = models.CharField(max_length=sys.maxsize)
+    texto = models.CharField(max_length=10000)
     
     def __str__(self):
         return self.texto
