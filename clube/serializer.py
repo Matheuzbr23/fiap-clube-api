@@ -43,7 +43,7 @@ class ListaClubesUsuarioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UsuarioClube
-        fields = ['__all__']
+        fields = ['id', 'clube_id', 'clube_nome', 'ativo']
 
 
 class ListaStoriesClubeSerializer(serializers.ModelSerializer):
