@@ -54,7 +54,6 @@ class ListaClubesUsuario(generics.ListAPIView):
         queryset = UsuarioClube.objects.filter(usuario_id=self.kwargs['pk'])
         return queryset
 
-    pagination_class = 2
     serializer_class = ListaClubesUsuarioSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
