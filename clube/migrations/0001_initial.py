@@ -19,7 +19,6 @@ class Migration(migrations.Migration):
                 ('descricao', models.CharField(max_length=100)),
                 ('tipo', models.CharField(choices=[('L', 'Livro'), ('F', 'Filme'), ('J', 'Jogo'), ('A', 'Anime')],
                                           max_length=1)),
-                ('created_at', models.DateTimeField(auto_now=True, blank=True))
             ],
         ),
         migrations.CreateModel(
@@ -30,7 +29,6 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(max_length=100, unique=True)),
                 ('senha', models.CharField(max_length=30)),
                 ('ativo', models.BooleanField(default=True)),
-                ('created_at', models.DateTimeField(auto_now=True, blank=True))
             ],
         ),
         migrations.CreateModel(
@@ -40,7 +38,6 @@ class Migration(migrations.Migration):
                 ('ativo', models.BooleanField(default=True)),
                 ('clube', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='clube.Clube')),
                 ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='clube.Usuario')),
-                ('created_at', models.DateTimeField(auto_now=True, blank=True))
             ],
         ),
         migrations.CreateModel(
@@ -51,7 +48,6 @@ class Migration(migrations.Migration):
                 ('texto', models.CharField(max_length=10000)),
                 ('clube', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='clube.Clube')),
                 ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='clube.Usuario')),
-                ('created_at', models.DateTimeField(auto_now=True, blank=True))
             ],
         ),
     ]
