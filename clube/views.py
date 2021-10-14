@@ -6,9 +6,6 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 
-from setup.settings import REST_FRAMEWORK
-
-
 class UsuarioViewSet(viewsets.ModelViewSet):
     """"Exibindo todos os usuarios"""
     queryset = Usuario.objects.all()
@@ -54,7 +51,7 @@ class ListaClubesUsuario(generics.ListAPIView):
     """"Exibindo todos os clubes de um usuário"""
     REST_FRAMEWORK = {
         'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-        'PAGE_SIZE': 100000
+        'PAGE_SIZE': 100
     }
 
     def get_queryset(self):
