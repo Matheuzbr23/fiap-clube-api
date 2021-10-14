@@ -50,6 +50,7 @@ class UsuarioClubeViewSet(viewsets.ModelViewSet):
 
 class ListaClubesUsuario(generics.ListAPIView):
     """"Exibindo todos os clubes de um usuário"""
+    paginate_by = 2
 
     def get_queryset(self):
         queryset = UsuarioClube.objects.filter(usuario_id=self.kwargs['pk'])
