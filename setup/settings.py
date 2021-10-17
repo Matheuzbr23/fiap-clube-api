@@ -142,7 +142,7 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Fiap Clube Api',
-    'DESCRIPTION': 'Api para o trabalho da FIAP',
+    'DESCRIPTION': 'Api para o trabalho da FIAP - 41SCJ / WEBSERVICES & RESTFUL TECHNOLOGIES',
     'VERSION': '1.0.0',
     # OTHER SETTINGS
 }
