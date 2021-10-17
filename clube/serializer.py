@@ -1,4 +1,6 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueTogetherValidator
+from django.core.exceptions import NON_FIELD_ERRORS
 
 from clube.models import Clube, Usuario, Storie, UsuarioClube
 
@@ -35,6 +37,13 @@ class UsuarioClubeSerializer(serializers.ModelSerializer):
     class Meta:
         model = UsuarioClube
         fields = '__all__'
+        validators = [
+                UniqueTogetherValidator(
+                    queryset=UsuarioClube.objects.all(),
+                    fields=('usuario', 'clube'),
+                    message="O usuário já está está neste clube."
+                )
+            ]
 
 
 class ListaClubesUsuarioSerializer(serializers.ModelSerializer):
