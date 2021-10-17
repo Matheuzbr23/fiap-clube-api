@@ -57,8 +57,8 @@ class ListaClubesUsuarioSerializer(serializers.ModelSerializer):
 
 class ListaStoriesClubeSerializer(serializers.ModelSerializer):
     usuario_id = serializers.ReadOnlyField(source='usuario.id')
-    usuario_nome = serializers.ReadOnlyField(source='usuario.nome')
+    usuario_username = serializers.ReadOnlyField(source='usuario.username')
 
     class Meta:
         model = Storie
-        fields = ['id', 'data', 'texto', 'usuario_id', 'usuario_nome']
+        fields = ['id', 'data', 'texto', 'usuario_id', 'usuario_username']
