@@ -2,14 +2,28 @@ from django.db import models
 import sys
 
 
-class Usuario(models.Model):
-    nome = models.CharField(max_length=30)
-    email = models.EmailField(blank=False, max_length=100, unique=True)
-    senha = models.CharField(max_length=30)
-    ativo = models.BooleanField(default=True)
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.utils.translation import ugettext_lazy as _
+
+from .managers import CustomUserManager
+
+
+class Usuario(AbstractUser):
+    username = models.CharField(max_length=50)
+    email = models.EmailField(_('email address'), unique=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = CustomUserManager()
+
+    spouse_name = models.CharField(blank=True, max_length=100)
+    date_of_birth = models.DateField(blank=True, null=True)
+    
 
     def __str__(self):
-        return self.nome
+        return self.email
 
 
 class Clube(models.Model):

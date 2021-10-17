@@ -3,11 +3,11 @@ from clube.models import Storie, Clube, Usuario, UsuarioClube
 
 
 class Usuarios(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'email', 'senha')
-    list_display_links = ('nome', 'email', 'senha')
-    search_fields = ('nome', 'email')
+    list_display = ('id', 'username', 'email', 'password')
+    list_display_links = ('username', 'email', 'password')
+    search_fields = ('username', 'email')
     list_per_page = 20
-    ordering = ('nome',)
+    ordering = ('email',)
 
 
 admin.site.register(Usuario, Usuarios)

@@ -16,15 +16,15 @@ class UsuarioSerializer(serializers.ModelSerializer):
         model = Usuario
         fields = '__all__'
 
-    def validate_nome(self, nome):
-        if not nome.replace(' ', '').isalpha():
+    def validate_username(self, username):
+        if not username.replace(' ', '').isalpha():
             raise serializers.ValidationError("Não é permitido a inclusão de números do nome do usuário.")
-        return nome
+        return username
 
-    def validate_senha(self, senha):
-        if len(senha) < 8:
+    def validate_password(self, password):
+        if len(password) < 8:
             raise serializers.ValidationError("A senha deve conter 8 ou mais digitos")
-        return senha
+        return password
 
 
 class StorieSerializer(serializers.ModelSerializer):

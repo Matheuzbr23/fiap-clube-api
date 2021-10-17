@@ -6,6 +6,7 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 
+
 class UsuarioViewSet(viewsets.ModelViewSet):
     """"Exibindo todos os usuarios"""
     queryset = Usuario.objects.all()

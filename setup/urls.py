@@ -16,6 +16,10 @@ urlpatterns = [
     path('', include(router.urls)),
     path('usuarios/<int:pk>/clubes/', ListaClubesUsuario.as_view()),
     path('clubes/<int:pk>/stories/', ListaStoriesClube.as_view()),
+
+    path('auth/', include('rest_auth.urls')),
+    path('auth/registration/', include('rest_auth.registration.urls')),
+    path('account/', include('allauth.urls')),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
