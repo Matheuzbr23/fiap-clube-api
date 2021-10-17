@@ -11,4 +11,5 @@ Após clonar o repositório siga os seguintes steps para rodar a aplicação loc
 
 3) Executar o comando "python manage.py runserver" para subir a aplicação localmente.
 
-4) Acessar o http://localhost:8000/
+4) Acessar o http://localhost:8000/ (A documentação swagger com todas as rotas podem ser visualizadas http://localhost:8000/api/schema/swagger-ui/)
+
